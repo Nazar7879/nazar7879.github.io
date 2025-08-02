@@ -377,6 +377,8 @@ body {
 .projectContainer {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem; 
+    
 }
 
 .projectHeader {
@@ -432,7 +434,7 @@ body {
 .projectImg {
     height: 12rem;
     overflow: hidden;
-    border-radius: 0.75;
+    border-radius: 0.75rem;
     margin-bottom: 1rem;
 }
 
@@ -940,4 +942,26 @@ body {
 .footerTopLink:hover {
     background-color: var(--primary);
     color: #e2e8f0;
+}
+
+
+/* ----- */
+body {
+    overflow-x: hidden;
+}
+
+.projectContainer {
+    padding: 0 1rem;
+}
+
+.projectImg {
+    max-width: 100%;
+    border-radius: 0.75rem;
+}
+
+.projectImg img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
