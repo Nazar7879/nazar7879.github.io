@@ -19,15 +19,16 @@ body {
     color: #e2e8f0 ;
 }
 
-.navbar{
-    position:fixed;
+.navbar {
+    position: fixed;
     width: 100%;
-    background-color: rgba(15 , 23, 42, 0.8);
+    background-color: rgba(15, 23, 42, 0.8); 
     backdrop-filter: blur(10px);
     z-index: 50;
     padding: 1rem 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 .navbarContainer{
     max-width: 1200px;
@@ -42,8 +43,10 @@ body {
 .headerlogo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: #a78bfa;           /* колір як після наведення */
     text-decoration: none;
+    transform: scale(1.05);   /* збільшення як після наведення */
+    cursor: pointer;          /* курсор одразу */
     transition: color 0.3s ease, transform 0.3s ease; 
 }
 
@@ -54,12 +57,12 @@ body {
 }
 
 .headerlogo span {
-    color: var(--primary);
+    color: #a855f7; 
     transition: color 0.3s ease;
 }
 
 .headerlogo span:hover {
-    color: #c084fc;        
+    color: #c084fc; 
 }
 
 
@@ -158,27 +161,22 @@ body {
 /* professional_name */
 
 @keyframes colorCycle {
-  0%, 100% { color: #a78bfa; }
-  50% { color: #c084fc; }
+  0%, 100% { color: #a78bfa; } /* світло-фіолетовий */
+  50% { color: #c084fc; }      /* яскравіший фіолетовий */
 }
 
 .heroTitle {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #e2e8f0;
-    transition: color 0.3s ease;
     cursor: default;
-}
-
-.heroTitle:hover {
-    animation: colorCycle 2s infinite;
+    animation: colorCycle 2s infinite; /* анімація завжди */
 }
 
 .heroTitle span {
-    color: var(--primary);
-    transition: color 0.3s ease;
+    animation: colorCycle 2s infinite; /* щоб і span теж переливався */
 }
+
 
 .heroTitle span:hover {
     color: #c084fc;
@@ -195,32 +193,8 @@ body {
 .heroSubtitle {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: #e2e8f0;  
-    transition: color 0.3s ease;
     cursor: default;
-}
-
-.heroSubtitle:hover {
-    animation: colorCycle 2s infinite;
-}
-
-
-
-/* Work with slogan */
-
-.heroDescription {
-    font-size: 1.25rem;          
-    color: #7c3aed;              
-    margin-bottom: 2rem;
-    font-weight: 700;           
-    text-shadow: 0 2px 4px rgba(124, 58, 181, 0.5); 
-    letter-spacing: 0.05em;      
-    transition: color 0.3s ease; 
-}
-
-.heroDescription:hover {
-    color: #a78bfa;              
-    cursor: default;             
+    animation: colorCycle 2s infinite; 
 }
 
 
@@ -309,6 +283,27 @@ body {
    color: var(--primary);
 }
 
+/* @keyframes colorCycle {
+  0%, 100% { color: #a78bfa; }
+  50% { color: #c084fc; }
+}
+
+.aboutTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor: default;
+    animation: colorCycle 2s infinite;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.aboutTitle span {
+    color: var(--primary);
+    animation: colorCycle 2s infinite;
+} */
+
+
 .aboutDivider {
     width: 5rem;
     height: 4px;
@@ -316,12 +311,23 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-.aboutSubText {
-    max-width: 700px;
-    margin: 0 auto;
-    color: #94a3b8;
-    font-size: 1rem;
+
+ @keyframes colorCycleText {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
+
+.aboutSubText {
+  background: linear-gradient(270deg, #a78bfa, #c084fc, #a78bfa);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycleText 5s ease infinite;
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 
 .aboutContent {
     display: flex;
@@ -432,11 +438,12 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-.projectSubtext {
+/* .projectSubtext {
     max-width: 700px;
     margin: 0 auto;
     color: #94a3b8;
-}
+} */
+ 
 
 .projectGrid {
     display: grid;
@@ -562,59 +569,69 @@ body {
     animation-delay: 0.4s;
 }
 
-.projectLinks {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
 .projectLinks a {
     color: #c084fc;
     position: relative;
     text-decoration: none;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectLinks a:hover,
+.projectLinks a:focus-visible {
+    color: #a78bfa;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(167, 139, 250, 0.4);
+    outline: none;
+}
+
+.projectLinks a:focus-visible {
+    outline: 2px solid #c084fc;
+    outline-offset: 4px;
 }
 
 .projectLinks a::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 100%;
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #a78bfa;
-    transition: width 0.3s ease;
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
-.projectLinks a:hover {
-    color: #a78bfa;
+.projectLinks a:hover::after,
+.projectLinks a:focus-visible::after {
+    transform: scaleX(1);
 }
 
-.projectLinks a:hover::after {
-    width: 100%;
-}
-
-/* Підказки (tooltip) для посилань з атрибутом title */
-.projectLinks a[title] {
-    position: relative;
-}
-
-.projectLinks a[title]:hover::after {
+.projectLinks a[title]::after {
     content: attr(title);
     position: absolute;
     bottom: 120%;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(23, 23, 42, 0.9);
+    color: #e2e8f0;
+    padding: 6px 10px;
+    border-radius: 6px;
     white-space: nowrap;
     font-size: 0.75rem;
-    opacity: 0.8;
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    z-index: 10;
 }
+
+.projectLinks a[title]:hover::after {
+    opacity: 0.85;
+    transform: translateX(-50%) translateY(0);
+}
+
 
 /* Анімація плавного появи */
 @keyframes fadeInUp {
@@ -639,7 +656,7 @@ body {
     .projectGrid {
         grid-template-columns: repeat(3,1fr);
     }
-}
+} */
 
 /* Skills sections */
 
@@ -678,11 +695,11 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-.skillSubtext {
+/* .skillSubtext {
     max-width: 700px;
     margin: 0 auto;
     color: #94a3b8;
-}
+} */
 
 .skillsGroup {
     margin-bottom: 3rem;
