@@ -841,19 +841,27 @@ body {
 }
 
 .contactForm button {
-    padding: 0.75rem;
-    background: var(--primary);
-    color: #e2e8f0;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, #9333ea, #7e22ce, #9333ea);
+    background-size: 200% 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-position 0.5s ease, transform 0.2s ease;
 }
 
-.contactForm button:hover{
-    background: #7e22ce;
+.contactForm button:hover {
+    background-position: 100% 0;
+    transform: scale(1.05);
 }
+
+.contactForm button:active {
+    transform: scale(0.97);
+}
+
 
 
 /* _____ */
@@ -928,7 +936,7 @@ body {
     }
 }
 
-.footerLogo {
+ .footerLogo {
      font-size: 2rem;
      font-weight: bold;
      color: #e2e8f0;
@@ -936,7 +944,8 @@ body {
 
 .footerLogo span {
     color: var(--primary);
-}
+}  */
+
 
 .footerSosials {
     display: flex;
