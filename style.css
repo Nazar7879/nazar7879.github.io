@@ -43,10 +43,10 @@ body {
 .headerlogo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #a78bfa;           /* колір як після наведення */
+    color: #a78bfa;           
     text-decoration: none;
-    transform: scale(1.05);   /* збільшення як після наведення */
-    cursor: pointer;          /* курсор одразу */
+    transform: scale(1.05);   
+    cursor: pointer;          
     transition: color 0.3s ease, transform 0.3s ease; 
 }
 
@@ -161,20 +161,30 @@ body {
 /* professional_name */
 
 @keyframes colorCycle {
-  0%, 100% { color: #a78bfa; } /* світло-фіолетовий */
-  50% { color: #c084fc; }      /* яскравіший фіолетовий */
+  0%, 100% { color: #a78bfa; } 
+  50% { color: #c084fc; }      
 }
+
 
 .heroTitle {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
     cursor: default;
-    animation: colorCycle 2s infinite; /* анімація завжди */
+    animation: colorCycle 2s infinite; 
+    text-align: center; 
 }
 
+.heroContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-direction: column;  
+}
+
+
 .heroTitle span {
-    animation: colorCycle 2s infinite; /* щоб і span теж переливався */
+    animation: colorCycle 2s infinite; 
 }
 
 
@@ -195,6 +205,7 @@ body {
     margin-bottom: 1.5rem;
     cursor: default;
     animation: colorCycle 2s infinite; 
+    text-align: center; 
 }
 
 
@@ -282,27 +293,6 @@ body {
 .aboutTitle span {
    color: var(--primary);
 }
-
-/* @keyframes colorCycle {
-  0%, 100% { color: #a78bfa; }
-  50% { color: #c084fc; }
-}
-
-.aboutTitle {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    cursor: default;
-    animation: colorCycle 2s infinite;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.aboutTitle span {
-    color: var(--primary);
-    animation: colorCycle 2s infinite;
-} */
-
 
 .aboutDivider {
     width: 5rem;
@@ -438,12 +428,6 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-/* .projectSubtext {
-    max-width: 700px;
-    margin: 0 auto;
-    color: #94a3b8;
-} */
- 
 
 .projectGrid {
     display: grid;
@@ -695,11 +679,6 @@ body {
     margin: 0 auto 1.5rem;
 }
 
-/* .skillSubtext {
-    max-width: 700px;
-    margin: 0 auto;
-    color: #94a3b8;
-} */
 
 .skillsGroup {
     margin-bottom: 3rem;
