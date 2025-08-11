@@ -135,7 +135,7 @@ body {
 
 
 .heroSection {
-    min-width: 100vh;
+    /* min-width: 100vh; */
     padding-top: 5rem;
     display: flex;
     align-items: center;
