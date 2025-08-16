@@ -293,30 +293,27 @@
         </div>
         <div class="contactContent">
             <!-- contact form -->
-             <form class="contactForm">
-                <div class="contactGrid">
-                    <div>
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name">
-
-                    </div>
-                    <div>
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email">
-                    </div>
-                </div>
-                <div>
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject">
-
-
-                </div>
-                <div>
-                    <label for="message">Your Message</label>
-                    <textarea name="" id="message" rows="5"></textarea>
-                </div>
-                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
-             </form>
+<form class="contactForm" id="contactForm" action="https://formspree.io/f/xzzvqzvr" method="POST">
+  <div class="contactGrid">
+    <div>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+  </div>
+  <div>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required>
+  </div>
+  <div>
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+  <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+</form>
              <!-- contact info -->
     
 <div class="contactInfo">
@@ -367,6 +364,7 @@
     </div>
  </footer>
 
-<script src="script.js"></script>  
+<script src="script.js"></script> 
+<script src="contact.js"></script> 
 </body>
 </html>
