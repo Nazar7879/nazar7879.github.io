@@ -16,6 +16,14 @@ class ContactForm {
     event.preventDefault();
     const formData = new FormData(this.form);
 
+   
+    for (let [name, value] of formData.entries()) {
+      if (!value.trim()) {
+        this.showError(`Please fill out the "${name}" field.`);
+        return; 
+      }
+    }
+
     try {
       const response = await fetch(this.form.action, {
         method: this.form.method,
@@ -42,7 +50,6 @@ class ContactForm {
     alert(`❌ Error: ${message}`);
   }
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   new ContactForm("contactForm");
