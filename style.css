@@ -815,11 +815,13 @@ body {
     margin-bottom: 4rem;
 }
 
-.contactTitle {
+ .contactTitle {
     font-size: 2.5rem;
     font-weight: 700;
     color: #e2e8f0;
-}
+} 
+
+
 
 .contacTitle span {
     color: var(--primary);
